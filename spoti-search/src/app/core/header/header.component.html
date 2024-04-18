@@ -1,10 +1,65 @@
-<header>
+<!-- <header>
   <h1>Spotify Artist Search</h1>
   <input type="text" [(ngModel)]="searchQuery" (input)="search()" placeholder="Search artists">
   <div *ngIf="searchResults.length">
     <div *ngFor="let artist of searchResults" (click)="selectArtist(artist)">
-      <!-- Puedes agregar más detalles del artista si quieres -->
       <span>{{ artist.name }}</span>
     </div>
   </div>
-</header>
+</header> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
+        </li>
+      </ul>
+      <div class="d-flex flex-column">
+        <div class="d-flex">
+          <input [(ngModel)]="searchQuery" (input)="search()" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+        <div class="search-results">
+          <div *ngFor="let artist of searchResults" (click)="selectArtist(artist)" class="card mb-1" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4 photo-wrapper">
+                <img [src]="artist.images[2]?.url" class="img-fluid rounded-start photo" [alt]="artist.name">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h6 class="card-title">{{ artist.name }}</h6>
+                  <span class="card-text">{{ artist.type }}</span> <br>
+                  <span class="card-text"><small class="text-muted">Rank: {{ artist.popularity }}</small></span>
+                </div>
+              </div>
+              <hr class="mb-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

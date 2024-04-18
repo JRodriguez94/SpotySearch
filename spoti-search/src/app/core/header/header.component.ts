@@ -26,6 +26,7 @@ export class HeaderComponent {
       debounceTime(300), // Esperar 300ms para evitar búsquedas innecesarias
       switchMap(query => this.spotifyService.searchArtists(query)) // Cambiar a búsqueda de artistas
     ).subscribe(results => {
+      console.log('results: ', results);
       this.searchResults = results;
     });
   }

@@ -1,0 +1,26 @@
+.search-results {
+    position: fixed;
+    // background-color: peachpuff;
+    top: 50px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.photo {
+    height: 60px;
+}
+
+.card-title {
+    margin: 3px;
+}
+
+.card-body {
+    padding: 5px;
+}
+
+.photo-wrapper {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
