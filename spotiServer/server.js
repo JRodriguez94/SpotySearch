@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require('cors');  // Importar cors
 const { refreshSpotifyToken } = require('./auth');
 const { searchArtists } = require('./spotifyController');
 
 const app = express();
+
+// Configurar CORS para permitir solicitudes de cualquier origen
+app.use(cors());
+
 app.use(express.json());
 
 refreshSpotifyToken();

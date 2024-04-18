@@ -1,0 +1,2 @@
+<app-header (artistSelected)="onArtistSelected($event)"></app-header>
+<app-artist-profile *ngIf="selectedArtist" [artist]="selectedArtist"></app-artist-profile>

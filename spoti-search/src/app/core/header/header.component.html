@@ -1,0 +1,10 @@
+<header>
+  <h1>Spotify Artist Search</h1>
+  <input type="text" [(ngModel)]="searchQuery" (input)="search()" placeholder="Search artists">
+  <div *ngIf="searchResults.length">
+    <div *ngFor="let artist of searchResults" (click)="selectArtist(artist)">
+      <!-- Puedes agregar más detalles del artista si quieres -->
+      <span>{{ artist.name }}</span>
+    </div>
+  </div>
+</header>

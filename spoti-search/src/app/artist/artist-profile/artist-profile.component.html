@@ -1,0 +1,14 @@
+<!-- <div *ngIf="artist">
+    <img *ngIf="artist.images.length" [src]="artist.images[0].url" alt="{{ artist.name }}">
+    <h2>{{ artist.name }}</h2>
+  </div> -->
+
+  <div class="card" style="width: 18rem;">
+    <img *ngIf="artist.images.length" [src]="artist.images[0].url" alt="{{ artist.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ artist.name }}</h5>
+      <p class="card-text">Followers: {{ artist.followers.total }}</p>
+      <p class="card-text">Popularity: {{ artist.popularity }}</p>
+      <!-- Add more artist details here -->
+    </div>
+  </div>
